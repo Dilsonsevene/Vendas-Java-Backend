@@ -23,14 +23,8 @@ import java.io.IOException;
 public class JWTAuthenticationFilter extends OncePerRequestFilter {
 
     private final JWTService jwtService;
-    private TokenRepository tokenRepository;
-
-    private final UserDetailsService userDetailsService = new UserDetailsService() {
-        @Override
-        public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-            return null;
-        }
-    };
+    private final TokenRepository tokenRepository;
+    private final UserDetailsService userDetailsService;
 
 
     @Override
